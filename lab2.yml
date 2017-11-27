@@ -1,0 +1,11 @@
+version: '3'
+services:
+  mosquitto:
+    image: toke/mosquitto:latest
+    ports:
+      - "1883:1883"
+  temperature-sensor:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature

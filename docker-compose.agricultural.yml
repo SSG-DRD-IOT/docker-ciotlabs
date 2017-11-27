@@ -1,0 +1,46 @@
+version: '3'
+services:
+  mosquitto:
+    image: toke/mosquitto:latest
+    ports:
+      - "1883:1883"
+  moisture_sensor_1:
+    image: agnathan/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=light
+  moisture_sensor_2:
+    image: agnathan/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=light
+  heat_sensor_3:
+    image: agnathan/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=light
+  # monitord:
+  #   image: agnathan/monitord:latest
+  #   links:
+  #     - mosquitto
+  #     - mongo
+  temperature_sensor_1:
+    image: agnathan/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature
+  soil_acidity_sensor_1:
+    image: agnathan/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature
+  light_sensor_3:
+    image: agnathan/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    command: --smallfiles --rest --auth

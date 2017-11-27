@@ -1,0 +1,9 @@
+version: '3'
+services:
+  mosquitto-tls:
+    image: ssgdrdiot/mosquitto-tls:latest
+  temperature-sensor:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto-tls
+    command: --hostname=mosquitto-tls --name=temperature --tls

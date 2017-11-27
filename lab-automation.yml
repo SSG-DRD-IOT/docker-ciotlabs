@@ -1,0 +1,22 @@
+# lab4 - Intel Commercial IoT Workshop
+# Dockerfile add a MongoDB database and the monitord service
+version: '3'
+services:
+  mosquitto-tls:
+    image: ssgdrdiot/mosquitto:latest
+    ports:
+      - "8883:8883"
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    command: --smallfiles
+  temperature-sensor:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto-tls
+    command: --hostname=mosquitto-tls --name=temperature --tls
+  monitord:
+    image: agnathan/monitord:latest
+  automation:
+    image: agnathan/automation:latest 

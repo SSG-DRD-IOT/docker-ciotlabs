@@ -1,0 +1,106 @@
+version: '3'
+services:
+  mosquitto:
+    image: toke/mosquitto:latest
+    ports:
+      - "1883:1883"
+  temperature-sensor1:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature --delay=50
+  temperature-sensor2:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature --delay=50
+  temperature-sensor3:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature --delay=50
+  temperature-sensor4:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature --delay=50
+  temperature-sensor5:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature --delay=50
+  temperature-sensor6:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature --delay=50
+  temperature-sensor7:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature --delay=50
+  temperature-sensor8:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature --delay=50
+  temperature-sensor9:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature --delay=50
+  temperature-sensor10:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature --delay=50
+  temperature-sensor11:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature --delay=50
+  temperature-sensor12:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature --delay=50
+  temperature-sensor13:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature --delay=50
+  temperature-sensor14:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature --delay=50
+  temperature-sensor15:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature --delay=50
+  temperature-sensor16:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature --delay=50
+  temperature-sensor17:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature --delay=50
+  temperature-sensor18:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature --delay=50
+  temperature-sensor19:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature --delay=50
+  temperature-sensor20:
+    image: ssgdrdiot/virtual-sensor:latest
+    links:
+      - mosquitto
+    command: --hostname=mosquitto --name=temperature --delay=50
